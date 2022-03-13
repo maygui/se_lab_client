@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {api, handleError} from 'helpers/api';
-import User from 'models/User';
-import {useHistory} from 'react-router-dom';
-import {Button} from 'components/ui/Button';
-import 'styles/views/Login.scss';
-import BaseContainer from "components/ui/BaseContainer";
-import PropTypes from "prop-types";
+import BaseContainer from 'components/ui/BaseContainer'
+import { Button } from 'components/ui/Button'
+import { api, handleError } from 'helpers/api'
+import User from 'models/User'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import 'styles/views/Login.scss'
 
 /*
 It is possible to add multiple components inside a single file,
@@ -49,7 +49,7 @@ const Login = props => {
             const user = new User(response.data);
 
             // Store the token into the local storage.
-            localStorage.setItem('token', user.token);
+            localStorage.setItem('id', user.id);
 
             // Login successfully worked --> navigate to the route /game in the GameRouter
             history.push(`/game`);
@@ -76,7 +76,7 @@ const Login = props => {
                         <Button
                             disabled={!username || !password}
                             width="100%"
-                            onClick={() => doLogin()}
+                            onClick={doLogin}
                         >
                             Login
                         </Button>
@@ -84,7 +84,7 @@ const Login = props => {
                     <div className="register button-container">
                         <Button
                             width="100%"
-                            onClick={props.history.push("/register")}
+                            onClick={() => history.push("/register")}
                         >
                             Register
                         </Button>

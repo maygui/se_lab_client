@@ -1,6 +1,6 @@
-import {Redirect, Route} from "react-router-dom";
-import Game from "components/views/Game";
-import PropTypes from 'prop-types';
+import Game from 'components/views/Game'
+import PropTypes from 'prop-types'
+import { Redirect, Route } from 'react-router-dom'
 
 const GameRouter = props => {
   /**

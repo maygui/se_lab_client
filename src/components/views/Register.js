@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {api, handleError} from 'helpers/api';
-import User from 'models/User';
-import {useHistory} from 'react-router-dom';
-import {Button} from 'components/ui/Button';
-import 'styles/views/Login.scss';
-import BaseContainer from "components/ui/BaseContainer";
-import PropTypes from "prop-types";
+import BaseContainer from 'components/ui/BaseContainer'
+import { Button } from 'components/ui/Button'
+import { api, handleError } from 'helpers/api'
+import User from 'models/User'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import 'styles/views/Login.scss'
 
 /*
 It is possible to add multiple components inside a single file,
@@ -50,7 +50,7 @@ const Register = props => {
             const user = new User(response.data);
 
             // Store the token into the local storage.
-            localStorage.setItem('token', user.token);
+            localStorage.setItem('id', user.id);
 
             // Register successfully worked --> navigate to the route /game in the GameRouter
             history.push(`/game`);

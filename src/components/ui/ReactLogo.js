@@ -1,5 +1,5 @@
-import React from "react";
-import "styles/ui/ReactLogo.scss";
+import React from 'react'
+import 'styles/ui/ReactLogo.scss'
 
 export const ReactLogo = props => {
   return (
